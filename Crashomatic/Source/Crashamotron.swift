@@ -26,7 +26,7 @@ struct Crashamotron {
         "X-Costume": "party"
     ]
 
-    static let url = "https://httpXXXXXXXbin.org/headers"
+    static let url = "https://httpbin.org/headers"
 
     // Crash with Alamofire
 
