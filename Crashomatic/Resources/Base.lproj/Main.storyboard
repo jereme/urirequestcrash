@@ -22,11 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gZ-RN-8nL">
-                                <rect key="frame" x="99" y="318" width="176" height="30"/>
+                                <rect key="frame" x="99" y="323" width="176" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Death by a thousand cuts"/>
                                 <connections>
                                     <action selector="didTapDeathByAThousandCuts" destination="BYZ-38-t0r" eventType="touchUpInside" id="YGh-R9-njR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGD-YC-gv2">
+                                <rect key="frame" x="129" y="376" width="117" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Death by one cut"/>
+                                <connections>
+                                    <action selector="didTapDeathByOneCut" destination="BYZ-38-t0r" eventType="touchUpInside" id="c71-Y6-Xzc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,10 +42,12 @@
                     </view>
                     <connections>
                         <outlet property="deathByAThousandCuts" destination="7gZ-RN-8nL" id="oQu-6p-5hR"/>
+                        <outlet property="deathByOneCut" destination="pGD-YC-gv2" id="NNb-F8-cKk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>

@@ -10,79 +10,118 @@ import Alamofire
 import Foundation
 
 struct Crashamotron {
+    static var requestNumber = 0
+
     static let sessionManager = SessionManager()
 
-    static func testAFCrash() {
-        let url = "https://httpbin.org/headers"
+    static let headers: HTTPHeaders = [
+        "Accept": "application/json",
+        "X-Taco": "party",
+        "X-Hamburger": "party",
+        "X-Hotdog": "party",
+        "X-Cupcake": "party",
+        "X-Backyard": "party",
+        "X-Hardy": "party",
+        "X-Tupperware": "party",
+        "X-Costume": "party"
+    ]
 
-        let headers: HTTPHeaders = [
-            "Accept": "application/json",
-            "X-Taco": "party",
-            "X-Hamburger": "party",
-            "X-Hotdog": "party",
-            "X-Cupcake": "party",
-            "X-Taco2": "party",
-            "X-Taco3": "party",
-            "X-Taco4": "party",
-            "X-Taco5": "party",
-            "X-Taco6": "party",
-        ]
+    static let url = "https://httpbin.org/headers"
+
+    // Crash with Alamofire
+
+    static func testAFCrash() {
+        self.requestNumber += 1
+
+        let requestNumber = self.requestNumber
 
         let validStatusCodes = [200]
 
         let afRequest = sessionManager.request(url, headers: headers)
 
+        // Uncomment this line to fix the crash...
+        // _ = afRequest.request.httpBody
+
         afRequest.validate(statusCode: validStatusCodes).validateContentTypeMatchesAcceptHeader()
 
-        afRequest.responseJSON { response in
-            guard let request = afRequest.request else { return }
+        if let request = afRequest.request {
+            tauntRequest(request)
+        }
 
-            tauntRequest(request)
-            tauntRequest(request)
-            tauntRequest(request)
-            tauntRequest(request)
-            tauntRequest(request)
-            tauntRequest(request)
-            tauntRequest(request)
-            tauntRequest(request)
-            tauntRequest(request)
+        print("Sending request \(requestNumber)")
+
+        afRequest.responseJSON { response in
+            if let error = response.error {
+                print("Error on request \(requestNumber): \(error)")
+            } else {
+                print("Completed request \(requestNumber)")
+            }
         }
     }
 
+    // Crash with Foundation only
+    
     static func testCrash() {
-        guard let url = URL(string: "http://www.google.com") else { return }
+        guard let url = URL(string: url) else { return }
+
+        self.requestNumber += 1
+
+        let requestNumber = self.requestNumber
 
         var request = URLRequest(url: url)
 
-        for i in 1...10  {
-            request.setValue("\(i)", forHTTPHeaderField: "\(i)")
+        request.allHTTPHeaderFields = headers
+
+        // Uncomment this line to fix the crash...
+        // _ = request.httpBody
+
+        withUnsafePointer(to: &request) {
+            print("Original request address is \($0)")
         }
 
+        var task: URLSessionDataTask?
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        task = URLSession.shared.dataTask(with: request) { _, response, error in
+            if let request = task?.originalRequest {
+                tauntRequest(request)
+            }
 
-
+            if let error = error {
+                print("Error on request \(requestNumber): \(error)")
+            } else {
+                print("Completed request \(requestNumber)")
+            }
         }
-        _ = request.httpBody
 
-        DispatchQueue.global(qos: .utility).async {
-            let requestCopy = request
-            _ = requestCopy.allHTTPHeaderFields
-        }
+        task?.resume()
 
-        DispatchQueue.global(qos: .utility).async {
-            let requestCopy = request
-            _ = requestCopy.allHTTPHeaderFields
-        }
+        print("Completed request \(requestNumber)")
+
     }
 
     static func tauntRequest(_ request: URLRequest) {
+        var request = request
+
+        // ... or uncomment this line to fix the crash
+        // request.setValue("Foo", forHTTPHeaderField: "Bar")
+
+        withUnsafePointer(to: &request) {
+            print("Taunted request address is \($0)")
+        }
+
         DispatchQueue.global(qos: .utility).async {
-            let requestCopy = request
-            _ = requestCopy.allHTTPHeaderFields
+            _ = request.allHTTPHeaderFields
+        }
+        DispatchQueue.global(qos: .utility).async {
+            _ = request.allHTTPHeaderFields
+        }
+        DispatchQueue.global(qos: .utility).async {
+            _ = request.allHTTPHeaderFields
         }
     }
 }
+
+// MARK: -
 
 extension DataRequest {
     @discardableResult
@@ -96,5 +135,11 @@ extension DataRequest {
         }
 
         return ["*/*"]
+    }
+
+    private func tauntRequest() {
+        DispatchQueue.global(qos: .utility).async { [unowned self] in
+            _ = self.request?.allHTTPHeaderFields
+        }
     }
 }

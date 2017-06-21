@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var deathByAThousandCuts: UIButton?
+    @IBOutlet var deathByOneCut: UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapDeathByAThousandCuts() {
-        for i in 0...1000 {
-            print("Sending request \(i)")
+        for _ in 0...100 {
             Crashamotron.testAFCrash()
         }
     }
-}
 
+    @IBAction func didTapDeathByOneCut() {
+        Crashamotron.testAFCrash()
+    }
+}
