@@ -12,9 +12,12 @@
 		1EBB72121EF9DD25006D89C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB72101EF9DD25006D89C4 /* Main.storyboard */; };
 		1EBB72141EF9DD25006D89C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB72131EF9DD25006D89C4 /* Assets.xcassets */; };
 		1EBB72171EF9DD26006D89C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB72151EF9DD26006D89C4 /* LaunchScreen.storyboard */; };
+		1EBB721F1EF9DD35006D89C4 /* Crashamotron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB721E1EF9DD35006D89C4 /* Crashamotron.swift */; };
+		943B0C9A049873CA30495AE6 /* Pods_Crashomatic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A726C19581F099FF830119 /* Pods_Crashomatic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D84793783EB30E55F8E54BA /* Pods-Crashomatic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crashomatic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crashomatic/Pods-Crashomatic.debug.xcconfig"; sourceTree = "<group>"; };
 		1EBB72091EF9DD25006D89C4 /* Crashomatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crashomatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EBB720C1EF9DD25006D89C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EBB720E1EF9DD25006D89C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,10 @@
 		1EBB72131EF9DD25006D89C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EBB72161EF9DD26006D89C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EBB72181EF9DD26006D89C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EBB721E1EF9DD35006D89C4 /* Crashamotron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crashamotron.swift; sourceTree = "<group>"; };
+		1EBB72201EFADBC3006D89C4 /* Crashomatic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crashomatic-Bridging-Header.h"; sourceTree = "<group>"; };
+		65A726C19581F099FF830119 /* Pods_Crashomatic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crashomatic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B0FBA192538582EC2EA061 /* Pods-Crashomatic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crashomatic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crashomatic/Pods-Crashomatic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943B0C9A049873CA30495AE6 /* Pods_Crashomatic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +47,8 @@
 			isa = PBXGroup;
 			children = (
 				1EBB720B1EF9DD25006D89C4 /* Crashomatic */,
+				B1716DCCD4D00E29421BABF9 /* Frameworks */,
+				BC70CDAB305B3356A6BB6125 /* Pods */,
 				1EBB720A1EF9DD25006D89C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,14 +64,60 @@
 		1EBB720B1EF9DD25006D89C4 /* Crashomatic */ = {
 			isa = PBXGroup;
 			children = (
-				1EBB720C1EF9DD25006D89C4 /* AppDelegate.swift */,
-				1EBB720E1EF9DD25006D89C4 /* ViewController.swift */,
-				1EBB72101EF9DD25006D89C4 /* Main.storyboard */,
-				1EBB72131EF9DD25006D89C4 /* Assets.xcassets */,
-				1EBB72151EF9DD26006D89C4 /* LaunchScreen.storyboard */,
-				1EBB72181EF9DD26006D89C4 /* Info.plist */,
+				1EBB72241EFAEB5B006D89C4 /* Resources */,
+				1EBB72231EFAEB56006D89C4 /* Source */,
+				1EBB72251EFAEB61006D89C4 /* Supporting Files */,
 			);
 			path = Crashomatic;
+			sourceTree = "<group>";
+		};
+		1EBB72231EFAEB56006D89C4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB720C1EF9DD25006D89C4 /* AppDelegate.swift */,
+				1EBB721E1EF9DD35006D89C4 /* Crashamotron.swift */,
+				1EBB720E1EF9DD25006D89C4 /* ViewController.swift */,
+			);
+			name = Source;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1EBB72241EFAEB5B006D89C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB72131EF9DD25006D89C4 /* Assets.xcassets */,
+				1EBB72151EF9DD26006D89C4 /* LaunchScreen.storyboard */,
+				1EBB72101EF9DD25006D89C4 /* Main.storyboard */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1EBB72251EFAEB61006D89C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB72201EFADBC3006D89C4 /* Crashomatic-Bridging-Header.h */,
+				1EBB72181EF9DD26006D89C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1716DCCD4D00E29421BABF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65A726C19581F099FF830119 /* Pods_Crashomatic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC70CDAB305B3356A6BB6125 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D84793783EB30E55F8E54BA /* Pods-Crashomatic.debug.xcconfig */,
+				94B0FBA192538582EC2EA061 /* Pods-Crashomatic.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EBB721B1EF9DD26006D89C4 /* Build configuration list for PBXNativeTarget "Crashomatic" */;
 			buildPhases = (
+				858FBF41194E05B3E84E54B2 /* [CP] Check Pods Manifest.lock */,
 				1EBB72051EF9DD25006D89C4 /* Sources */,
 				1EBB72061EF9DD25006D89C4 /* Frameworks */,
 				1EBB72071EF9DD25006D89C4 /* Resources */,
+				5F97CD06B3E2A3D6B29274DB /* [CP] Embed Pods Frameworks */,
+				90EC569BB23EE563CF1D643E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +156,7 @@
 					1EBB72081EF9DD25006D89C4 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 3H3W4WGDNQ;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,12 +192,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F97CD06B3E2A3D6B29274DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crashomatic/Pods-Crashomatic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		858FBF41194E05B3E84E54B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90EC569BB23EE563CF1D643E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crashomatic/Pods-Crashomatic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1EBB72051EF9DD25006D89C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1EBB720F1EF9DD25006D89C4 /* ViewController.swift in Sources */,
+				1EBB721F1EF9DD35006D89C4 /* Crashamotron.swift in Sources */,
 				1EBB720D1EF9DD25006D89C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +260,7 @@
 				1EBB72111EF9DD25006D89C4 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1EBB72151EF9DD26006D89C4 /* LaunchScreen.storyboard */ = {
@@ -159,6 +269,7 @@
 				1EBB72161EF9DD26006D89C4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -261,26 +372,33 @@
 		};
 		1EBB721C1EF9DD26006D89C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D84793783EB30E55F8E54BA /* Pods-Crashomatic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3H3W4WGDNQ;
-				INFOPLIST_FILE = Crashomatic/Info.plist;
+				INFOPLIST_FILE = "Crashomatic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jereme.Crashomatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crashomatic/Crashomatic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		1EBB721D1EF9DD26006D89C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94B0FBA192538582EC2EA061 /* Pods-Crashomatic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3H3W4WGDNQ;
-				INFOPLIST_FILE = Crashomatic/Info.plist;
+				INFOPLIST_FILE = "Crashomatic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jereme.Crashomatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crashomatic/Crashomatic-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -304,6 +422,7 @@
 				1EBB721D1EF9DD26006D89C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
