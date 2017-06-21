@@ -26,7 +26,7 @@
 		1EBB72161EF9DD26006D89C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EBB72181EF9DD26006D89C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EBB721E1EF9DD35006D89C4 /* Crashamotron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crashamotron.swift; sourceTree = "<group>"; };
-		1EBB72201EFADBC3006D89C4 /* Crashomatic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crashomatic-Bridging-Header.h"; sourceTree = "<group>"; };
+		1EBB72201EFADBC3006D89C4 /* Crashomatic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Crashomatic-Bridging-Header.h"; path = "Crashomatic-Bridging-Header.h"; sourceTree = "<group>"; };
 		65A726C19581F099FF830119 /* Pods_Crashomatic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crashomatic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B0FBA192538582EC2EA061 /* Pods-Crashomatic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crashomatic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crashomatic/Pods-Crashomatic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +67,7 @@
 				1EBB72241EFAEB5B006D89C4 /* Resources */,
 				1EBB72231EFAEB56006D89C4 /* Source */,
 				1EBB72251EFAEB61006D89C4 /* Supporting Files */,
+				1EBB72201EFADBC3006D89C4 /* Crashomatic-Bridging-Header.h */,
 			);
 			path = Crashomatic;
 			sourceTree = "<group>";
@@ -78,7 +79,6 @@
 				1EBB721E1EF9DD35006D89C4 /* Crashamotron.swift */,
 				1EBB720E1EF9DD25006D89C4 /* ViewController.swift */,
 			);
-			name = Source;
 			path = Source;
 			sourceTree = "<group>";
 		};
@@ -89,17 +89,14 @@
 				1EBB72151EF9DD26006D89C4 /* LaunchScreen.storyboard */,
 				1EBB72101EF9DD25006D89C4 /* Main.storyboard */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
 		1EBB72251EFAEB61006D89C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1EBB72201EFADBC3006D89C4 /* Crashomatic-Bridging-Header.h */,
 				1EBB72181EF9DD26006D89C4 /* Info.plist */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
