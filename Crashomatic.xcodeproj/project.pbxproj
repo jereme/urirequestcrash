@@ -130,6 +130,7 @@
 				1EBB72071EF9DD25006D89C4 /* Resources */,
 				5F97CD06B3E2A3D6B29274DB /* [CP] Embed Pods Frameworks */,
 				90EC569BB23EE563CF1D643E /* [CP] Copy Pods Resources */,
+				1EA0BA421EFB2854000F5922 /* Upload dSYM */,
 			);
 			buildRules = (
 			);
@@ -190,6 +191,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1EA0BA421EFB2854000F5922 /* Upload dSYM */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Upload dSYM";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n\n/bin/sh \"${SCRIPT}\" \"AA7db3c601e378dacc575ba7e207efdba923ea17bf\"";
+		};
 		5F97CD06B3E2A3D6B29274DB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

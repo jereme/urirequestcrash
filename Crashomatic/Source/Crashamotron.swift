@@ -26,7 +26,7 @@ struct Crashamotron {
         "X-Costume": "party"
     ]
 
-    static let url = "https://httpbin.org/headers"
+    static let url = "https://httpXXXXXXXbin.org/headers"
 
     // Crash with Alamofire
 
@@ -115,9 +115,6 @@ struct Crashamotron {
         DispatchQueue.global(qos: .utility).async {
             _ = request.allHTTPHeaderFields
         }
-        DispatchQueue.global(qos: .utility).async {
-            _ = request.allHTTPHeaderFields
-        }
     }
 }
 
@@ -135,11 +132,5 @@ extension DataRequest {
         }
 
         return ["*/*"]
-    }
-
-    private func tauntRequest() {
-        DispatchQueue.global(qos: .utility).async { [unowned self] in
-            _ = self.request?.allHTTPHeaderFields
-        }
     }
 }
